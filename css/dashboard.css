@@ -1,0 +1,425 @@
+/*=========================================================
+    DASHBOARD.CSS
+=========================================================*/
+
+/*=========================
+    DASHBOARD GRID
+=========================*/
+
+.dashboard-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+    margin-top:40px;
+
+    margin-bottom:40px;
+
+}
+
+/*=========================
+    CARDS
+=========================*/
+
+.card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    min-height:180px;
+
+    padding:30px;
+
+    transition:.4s;
+
+    cursor:pointer;
+
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-60%;
+
+    left:-50%;
+
+    width:220px;
+
+    height:220px;
+
+    background:
+
+    radial-gradient(circle,
+    rgba(0,217,255,.18),
+    transparent 70%);
+
+    transition:.5s;
+
+}
+
+.card:hover::before{
+
+    transform:scale(1.4);
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    border:1px solid rgba(0,217,255,.25);
+
+}
+
+/*=========================
+    TITULO
+=========================*/
+
+.card h3{
+
+    font-size:14px;
+
+    color:#83A8C7;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+}
+
+/*=========================
+    VALOR
+=========================*/
+
+.card h2{
+
+    margin-top:20px;
+
+    font-size:42px;
+
+    font-weight:700;
+
+    color:white;
+
+}
+
+/*=========================
+    ICONO
+=========================*/
+
+.card::after{
+
+    content:"⚡";
+
+    position:absolute;
+
+    right:20px;
+
+    bottom:15px;
+
+    font-size:45px;
+
+    opacity:.08;
+
+}
+
+/*=========================
+    VIEWER
+=========================*/
+
+.viewer-section{
+
+    margin-top:30px;
+
+    padding:30px;
+
+}
+
+.viewer-section h2{
+
+    margin-bottom:25px;
+
+}
+
+/*=========================
+    MODELO 3D
+=========================*/
+
+#viewer{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+/*=========================
+    GRID ANIMADO
+=========================*/
+
+#viewer::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+    linear-gradient(rgba(0,217,255,.04) 1px,transparent 1px),
+
+    linear-gradient(90deg,rgba(0,217,255,.04) 1px,transparent 1px);
+
+    background-size:35px 35px;
+
+    animation:gridMove 18s linear infinite;
+
+}
+
+/*=========================
+    TEXTO
+=========================*/
+
+#viewer{
+
+    font-family:'Orbitron',sans-serif;
+
+    letter-spacing:2px;
+
+}
+
+/*=========================
+    CONTROL PANEL
+=========================*/
+
+.control-panel{
+
+    margin-top:35px;
+
+}
+
+.control-panel h2{
+
+    margin-bottom:30px;
+
+}
+
+/*=========================
+    BOTONES
+=========================*/
+
+.controls{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(180px,1fr));
+
+    gap:20px;
+
+}
+
+/*=========================
+    BOTÓN
+=========================*/
+
+.controls button{
+
+    height:65px;
+
+    font-size:15px;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.controls button::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:100%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+    90deg,
+
+    transparent,
+
+    rgba(255,255,255,.20),
+
+    transparent);
+
+    transition:.6s;
+
+}
+
+.controls button:hover::before{
+
+    left:120%;
+
+}
+
+/*=========================
+    AI PANEL
+=========================*/
+
+.ai-panel{
+
+    margin-top:35px;
+
+}
+
+.console{
+
+    position:relative;
+
+}
+
+.console::before{
+
+    content:"EMIS TERMINAL";
+
+    position:absolute;
+
+    top:10px;
+
+    right:15px;
+
+    font-size:11px;
+
+    color:#3CE6FF;
+
+    opacity:.5;
+
+}
+
+/*=========================
+    TERMINAL
+=========================*/
+
+.console{
+
+    line-height:2;
+
+    font-size:15px;
+
+}
+
+/*=========================
+    INDICADORES
+=========================*/
+
+.status-online{
+
+    color:#22FF88;
+
+}
+
+.status-offline{
+
+    color:#FF5252;
+
+}
+
+.status-warning{
+
+    color:#FFD54F;
+
+}
+
+/*=========================
+    FUTURO
+=========================*/
+
+.card:hover{
+
+    box-shadow:
+
+    0 0 20px rgba(0,217,255,.15),
+
+    0 0 40px rgba(0,217,255,.08),
+
+    inset 0 0 20px rgba(255,255,255,.02);
+
+}
+
+/*=========================
+    SCANLINE
+=========================*/
+
+.viewer-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    repeating-linear-gradient(
+
+        transparent 0px,
+
+        transparent 3px,
+
+        rgba(255,255,255,.015) 4px
+
+    );
+
+    pointer-events:none;
+
+}
+
+/*=========================
+    MINI HUD
+=========================*/
+
+.viewer-section{
+
+    position:relative;
+
+}
+
+.viewer-section::before{
+
+    content:"MODEL VIEW";
+
+    position:absolute;
+
+    top:15px;
+
+    right:20px;
+
+    color:#6FA9C9;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+}

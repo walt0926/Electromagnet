@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>ElectroGrúa | Control System</title>
+
+    <meta name="description"
+        content="Sistema Inteligente de Control para ElectroGrúa">
+
+    <link rel="icon" href="assets/icons/favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link rel="stylesheet" href="css/components.css">
+
+    <link rel="stylesheet" href="css/animations.css">
+
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+    <!--========================================================-->
+
+    <!-- BOOT SCREEN -->
+
+    <!--========================================================-->
+
+    <section id="boot-screen">
+
+        <div class="boot-container">
+
+            <h1 class="boot-title">
+                ELECTROGRÚA
+            </h1>
+
+            <h2 class="boot-subtitle">
+                ELECTROMAGNETIC CONTROL SYSTEM
+            </h2>
+
+            <div class="boot-terminal">
+
+                <p>Initializing System...</p>
+
+                <p>Checking Power Unit...</p>
+
+                <p>Checking Motors...</p>
+
+                <p>Checking Electromagnet...</p>
+
+                <p>Loading Physics Engine...</p>
+
+                <p>Loading AI Assistant...</p>
+
+                <p>Loading Dashboard...</p>
+
+                <p class="success">
+                    SYSTEM READY
+                </p>
+
+            </div>
+
+            <div class="boot-progress">
+
+                <div class="progress-bar">
+
+                    <div id="boot-progress-fill"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--========================================================-->
+
+    <!-- MAIN APPLICATION -->
+
+    <!--========================================================-->
+
+    <main id="app">
+
+        <!--====================================================-->
+
+        <!-- TOP BAR -->
+
+        <!--====================================================-->
+
+        <header class="topbar">
+
+            <div class="logo">
+
+                ELECTROGRÚA
+
+            </div>
+
+            <div class="status">
+
+                <span class="online-dot"></span>
+
+                ONLINE
+
+            </div>
+
+        </header>
+
+        <!--====================================================-->
+
+        <!-- SIDEBAR -->
+
+        <!--====================================================-->
+
+        <aside class="sidebar">
+
+            <button class="menu-btn active">
+                Dashboard
+            </button>
+
+            <button class="menu-btn">
+                Control
+            </button>
+
+            <button class="menu-btn">
+                Physics
+            </button>
+
+            <button class="menu-btn">
+                Diagramas
+            </button>
+
+            <button class="menu-btn">
+                Estadísticas
+            </button>
+
+            <button class="menu-btn">
+                Configuración
+            </button>
+
+        </aside>
+
+        <!--====================================================-->
+
+        <!-- CONTENT -->
+
+        <!--====================================================-->
+
+        <section class="content">
+
+            <!--==============================================-->
+
+            <!-- HERO -->
+
+            <!--==============================================-->
+
+            <section class="hero">
+
+                <h1>
+
+                    ELECTROGRÚA
+
+                </h1>
+
+                <p>
+
+                    Sistema Inteligente de Control
+                    Electromagnético Industrial
+
+                </p>
+
+                <button id="startSystem">
+
+                    INICIAR SISTEMA
+
+                </button>
+
+            </section>
+
+            <!--==============================================-->
+
+            <!-- DASHBOARD -->
+
+            <!--==============================================-->
+
+            <section class="dashboard-grid">
+
+                <div class="card">
+
+                    <h3>
+
+                        Estado
+
+                    </h3>
+
+                    <h2 id="systemStatus">
+
+                        APAGADO
+
+                    </h2>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>
+
+                        Voltaje
+
+                    </h3>
+
+                    <h2>
+
+                        0 V
+
+                    </h2>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>
+
+                        Corriente
+
+                    </h3>
+
+                    <h2>
+
+                        0 A
+
+                    </h2>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>
+
+                        Campo Magnético
+
+                    </h3>
+
+                    <h2>
+
+                        0 mT
+
+                    </h2>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>
+
+                        Temperatura
+
+                    </h3>
+
+                    <h2>
+
+                        25 °C
+
+                    </h2>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>
+
+                        Motores
+
+                    </h3>
+
+                    <h2>
+
+                        OFF
+
+                    </h2>
+
+                </div>
+
+            </section>
+
+            <!--==============================================-->
+
+            <!-- 3D VIEWER -->
+
+            <!--==============================================-->
+
+            <section class="viewer-section">
+
+                <h2>
+
+                    MODELO 3D
+
+                </h2>
+
+                <div id="viewer">
+
+                    Próximamente...
+
+                </div>
+
+            </section>
+
+            <!--==============================================-->
+
+            <!-- CONTROL PANEL -->
+
+            <!--==============================================-->
+
+            <section class="control-panel">
+
+                <h2>
+
+                    PANEL DE CONTROL
+
+                </h2>
+
+                <div class="controls">
+
+                    <button>←</button>
+
+                    <button>→</button>
+
+                    <button>↑</button>
+
+                    <button>↓</button>
+
+                    <button>ACTIVAR ELECTROIMÁN</button>
+
+                    <button>PARO DE EMERGENCIA</button>
+
+                </div>
+
+            </section>
+
+            <!--==============================================-->
+
+            <!-- AI -->
+
+            <!--==============================================-->
+
+            <section class="ai-panel">
+
+                <h2>
+
+                    EMIS AI
+
+                </h2>
+
+                <div class="console">
+
+                    Bienvenido al sistema de control.
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <!--========================================================-->
+
+    <!-- PARTICLES -->
+
+    <!--========================================================-->
+
+    <canvas id="particles"></canvas>
+
+    <!--========================================================-->
+
+    <!-- JAVASCRIPT -->
+
+    <!--========================================================-->
+
+    <script src="js/boot.js"></script>
+
+    <script src="js/app.js"></script>
+
+    <script src="js/dashboard.js"></script>
+
+    <script src="js/ui.js"></script>
+
+    <script src="js/particles.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,346 @@
+/*=========================================================
+    ELECTROGRÚA
+    STYLE.CSS
+=========================================================*/
+
+/*=========================
+    RESET
+=========================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#04070D;
+
+    color:white;
+
+    overflow:hidden;
+
+    min-height:100vh;
+
+}
+
+/*=========================
+    VARIABLES
+=========================*/
+
+:root{
+
+    --bg:#04070D;
+
+    --panel:#0D111B;
+
+    --panel2:#131B28;
+
+    --border:rgba(255,255,255,.08);
+
+    --cyan:#00D9FF;
+
+    --blue:#0088FF;
+
+    --green:#22FF88;
+
+    --red:#FF5252;
+
+    --yellow:#FFD54F;
+
+    --text:#EDF5FF;
+
+    --glass:rgba(255,255,255,.04);
+
+    --blur:blur(18px);
+
+}
+
+/*=========================
+    FONDO
+=========================*/
+
+body{
+
+    background:
+
+    radial-gradient(circle at top,#0E2340 0%,transparent 35%),
+
+    radial-gradient(circle at bottom,#001B33 0%,transparent 30%),
+
+    linear-gradient(180deg,#04070D,#050B18,#020407);
+
+}
+
+/*=========================
+    GRID TECNOLÓGICO
+=========================*/
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+
+    linear-gradient(rgba(0,217,255,.04) 1px,transparent 1px),
+
+    linear-gradient(90deg,rgba(0,217,255,.04) 1px,transparent 1px);
+
+    background-size:40px 40px;
+
+    pointer-events:none;
+
+    z-index:-3;
+
+}
+
+/*=========================
+    GLOW SUPERIOR
+=========================*/
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:800px;
+
+    height:800px;
+
+    left:50%;
+
+    top:-450px;
+
+    transform:translateX(-50%);
+
+    background:
+
+    radial-gradient(circle,
+
+    rgba(0,217,255,.20),
+
+    transparent 70%);
+
+    filter:blur(80px);
+
+    pointer-events:none;
+
+    z-index:-2;
+
+}
+
+/*=========================
+    TIPOGRAFÍA
+=========================*/
+
+h1,h2,h3{
+
+    font-family:'Orbitron',sans-serif;
+
+    letter-spacing:2px;
+
+}
+
+p{
+
+    color:#A9B7CF;
+
+    line-height:1.6;
+
+}
+
+/*=========================
+    APP
+=========================*/
+
+#app{
+
+    width:100%;
+
+    height:100vh;
+
+    display:grid;
+
+    grid-template-columns:
+
+    280px
+
+    1fr;
+
+}
+
+/*=========================
+    CONTENIDO
+=========================*/
+
+.content{
+
+    overflow-y:auto;
+
+    padding:40px;
+
+}
+
+/*=========================
+    SCROLL
+=========================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#0D111B;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--cyan);
+
+    border-radius:20px;
+
+}
+
+/*=========================
+    GLASS PANEL
+=========================*/
+
+.card,
+
+.viewer-section,
+
+.control-panel,
+
+.ai-panel{
+
+    background:var(--glass);
+
+    backdrop-filter:var(--blur);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    box-shadow:
+
+    0 0 25px rgba(0,217,255,.05);
+
+}
+
+/*=========================
+    TITLES
+=========================*/
+
+section h2{
+
+    margin-bottom:20px;
+
+    color:var(--cyan);
+
+}
+
+/*=========================
+    HERO
+=========================*/
+
+.hero{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:45vh;
+
+    text-align:center;
+
+}
+
+.hero h1{
+
+    font-size:4.5rem;
+
+    color:white;
+
+    text-shadow:
+
+    0 0 10px var(--cyan),
+
+    0 0 25px var(--cyan),
+
+    0 0 60px var(--blue);
+
+}
+
+.hero p{
+
+    margin-top:20px;
+
+    max-width:700px;
+
+    font-size:18px;
+
+}
+
+.hero button{
+
+    margin-top:45px;
+
+}
+
+/*=========================
+    PARTICLES
+=========================*/
+
+#particles{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-1;
+
+}
+
+/*=========================
+    LINKS
+=========================*/
+
+a{
+
+    text-decoration:none;
+
+    color:white;
+
+}
+
+/*=========================
+    IMAGES
+=========================*/
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
