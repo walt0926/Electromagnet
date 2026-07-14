@@ -16,7 +16,6 @@
 
     <link rel="icon" href="assets/icons/favicon.png">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect"
@@ -25,8 +24,6 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-
-    <!-- CSS -->
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -41,12 +38,6 @@
 </head>
 
 <body>
-
-    <!--========================================================-->
-
-    <!-- BOOT SCREEN -->
-
-    <!--========================================================-->
 
     <section id="boot-screen">
 
@@ -96,19 +87,7 @@
 
     </section>
 
-    <!--========================================================-->
-
-    <!-- MAIN APPLICATION -->
-
-    <!--========================================================-->
-
     <main id="app">
-
-        <!--====================================================-->
-
-        <!-- TOP BAR -->
-
-        <!--====================================================-->
 
         <header class="topbar">
 
@@ -118,21 +97,29 @@
 
             </div>
 
-            <div class="status">
+            <div class="topbar-right">
 
-                <span class="online-dot"></span>
+                <div class="clock">
 
-                ONLINE
+                    <span id="clock">00:00:00</span>
+
+                </div>
+
+                <div class="status">
+
+                    <span class="online-dot"></span>
+
+                    <span id="systemTopStatus">
+
+                        OFFLINE
+
+                    </span>
+
+                </div>
 
             </div>
 
         </header>
-
-        <!--====================================================-->
-
-        <!-- SIDEBAR -->
-
-        <!--====================================================-->
 
         <aside class="sidebar">
 
@@ -162,19 +149,7 @@
 
         </aside>
 
-        <!--====================================================-->
-
-        <!-- CONTENT -->
-
-        <!--====================================================-->
-
         <section class="content">
-
-            <!--==============================================-->
-
-            <!-- HERO -->
-
-            <!--==============================================-->
 
             <section class="hero">
 
@@ -199,171 +174,202 @@
 
             </section>
 
-            <!--==============================================-->
-
-            <!-- DASHBOARD -->
-
-            <!--==============================================-->
-
             <section class="dashboard-grid">
 
-                <div class="card">
+                <div class="telemetry-panel">
 
-                    <h3>
+                    <h2>TELEMETRÍA DEL SISTEMA</h2>
 
-                        Estado
+                    <div class="meter">
 
-                    </h3>
+                        <div class="meter-header">
+                            <span>VOLTAJE</span>
+                            <span id="voltageValue">0.0 V</span>
+                        </div>
 
-                    <h2 id="systemStatus">
+                        <div class="meter-bar">
+                            <div id="voltageBar" class="fill cyan"></div>
+                        </div>
 
-                        APAGADO
+                    </div>
 
-                    </h2>
+                    <div class="meter">
 
-                </div>
+                        <div class="meter-header">
+                            <span>CORRIENTE</span>
+                            <span id="currentValue">0.0 A</span>
+                        </div>
 
-                <div class="card">
+                        <div class="meter-bar">
+                            <div id="currentBar" class="fill green"></div>
+                        </div>
 
-                    <h3>
+                    </div>
 
-                        Voltaje
+                    <div class="meter">
 
-                    </h3>
+                        <div class="meter-header">
+                            <span>TEMPERATURA</span>
+                            <span id="temperatureValue">25 °C</span>
+                        </div>
 
-                    <h2>
+                        <div class="meter-bar">
+                            <div id="temperatureBar" class="fill orange"></div>
+                        </div>
 
-                        0 V
+                    </div>
 
-                    </h2>
+                    <div class="meter">
 
-                </div>
+                        <div class="meter-header">
+                            <span>CAMPO MAGNÉTICO</span>
+                            <span id="magneticValue">0 mT</span>
+                        </div>
 
-                <div class="card">
+                        <div class="meter-bar">
+                            <div id="magneticBar" class="fill blue"></div>
+                        </div>
 
-                    <h3>
-
-                        Corriente
-
-                    </h3>
-
-                    <h2>
-
-                        0 A
-
-                    </h2>
-
-                </div>
-
-                <div class="card">
-
-                    <h3>
-
-                        Campo Magnético
-
-                    </h3>
-
-                    <h2>
-
-                        0 mT
-
-                    </h2>
+                    </div>
 
                 </div>
 
-                <div class="card">
+                <div class="status-panel">
 
-                    <h3>
+                    <h2>ESTADO DEL SISTEMA</h2>
 
-                        Temperatura
+                    <div class="status-item">
 
-                    </h3>
+                        <span>Motor 1</span>
 
-                    <h2>
+                        <span id="motor1Status" class="status-off">OFFLINE</span>
 
-                        25 °C
+                    </div>
 
-                    </h2>
+                    <div class="status-item">
+
+                        <span>Motor 2</span>
+
+                        <span id="motor2Status" class="status-off">OFFLINE</span>
+
+                    </div>
+
+                    <div class="status-item">
+
+                        <span>Electroimán</span>
+
+                        <span id="magnetStatus" class="status-off">OFF</span>
+
+                    </div>
+
+                    <div class="status-item">
+
+                        <span>Transformador</span>
+
+                        <span id="transformerStatus" class="status-off">OFFLINE</span>
+
+                    </div>
+
+                    <div class="status-item">
+
+                        <span>Sistema</span>
+
+                        <span id="systemState" class="status-off">APAGADO</span>
+
+                    </div>
 
                 </div>
 
-                <div class="card">
+                <div class="power-panel">
 
-                    <h3>
+                    <h2>ENERGÍA</h2>
 
-                        Motores
+                    <div class="power-gauge">
+                        <svg viewBox="0 0 220 220">
+                            <circle cx="110" cy="110" r="90" class="gauge-bg"/>
+                            <circle cx="110" cy="110" r="90" id="powerCircle" class="gauge-progress"/>
+                        </svg>
+                        <div class="gauge-center">
+                            <div id="powerValue">0%</div>
+                            <p>POWER</p>
+                        </div>
+                    </div>
 
-                    </h3>
+                    <div class="power-info">
 
-                    <h2>
+                        <p>Batería 12V</p>
 
-                        OFF
+                        <p id="batteryState">DESCONECTADA</p>
 
-                    </h2>
+                    </div>
 
                 </div>
 
             </section>
-
-            <!--==============================================-->
-
-            <!-- 3D VIEWER -->
-
-            <!--==============================================-->
 
             <section class="viewer-section">
 
-                <h2>
+                <div class="viewer-header">
 
-                    MODELO 3D
+                    <h2>MODELO 3D</h2>
 
-                </h2>
+                    <div class="viewer-status">
+
+                        <span class="viewer-dot"></span>
+
+                        SIMULACIÓN
+
+                    </div>
+
+                </div>
 
                 <div id="viewer">
 
-                    Próximamente...
+                    <div class="viewer-overlay">
+
+                        <h3>ELECTROGRÚA</h3>
+
+                        <p>Esperando inicialización del sistema...</p>
+
+                    </div>
 
                 </div>
 
             </section>
-
-            <!--==============================================-->
-
-            <!-- CONTROL PANEL -->
-
-            <!--==============================================-->
 
             <section class="control-panel">
 
-                <h2>
-
-                    PANEL DE CONTROL
-
-                </h2>
+                <h2>CONTROL MANUAL</h2>
 
                 <div class="controls">
 
-                    <button>←</button>
+                    <button id="leftBtn">
+                        ⟲ GIRAR IZQUIERDA
+                    </button>
 
-                    <button>→</button>
+                    <button id="rightBtn">
+                        ⟳ GIRAR DERECHA
+                    </button>
 
-                    <button>↑</button>
+                    <button id="upBtn">
+                        ▲ SUBIR CABLE
+                    </button>
 
-                    <button>↓</button>
+                    <button id="downBtn">
+                        ▼ BAJAR CABLE
+                    </button>
 
-                    <button>ACTIVAR ELECTROIMÁN</button>
+                    <button id="magnetBtn">
+                        ACTIVAR ELECTROIMÁN
+                    </button>
 
-                    <button>PARO DE EMERGENCIA</button>
+                    <button id="stopBtn">
+                        PARO DE EMERGENCIA
+                    </button>
 
                 </div>
 
             </section>
-
-            <!--==============================================-->
-
-            <!-- AI -->
-
-            <!--==============================================-->
 
             <section class="ai-panel">
 
@@ -381,23 +387,25 @@
 
             </section>
 
+            <section class="events-panel">
+
+                <h2>
+
+                    REGISTRO DE EVENTOS
+
+                </h2>
+
+                <div id="eventLog">
+
+                </div>
+
+            </section>
+
         </section>
 
     </main>
 
-    <!--========================================================-->
-
-    <!-- PARTICLES -->
-
-    <!--========================================================-->
-
     <canvas id="particles"></canvas>
-
-    <!--========================================================-->
-
-    <!-- JAVASCRIPT -->
-
-    <!--========================================================-->
 
     <script src="js/boot.js"></script>
 
